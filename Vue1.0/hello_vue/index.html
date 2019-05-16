@@ -30,6 +30,11 @@
         <button v-on:click="removeTodo($index)">X</button>
       </li>
     </ul>
+    <br>
+    
+    <input type="checkbox" v-model="toggle"
+      v-bind:true-value="a"
+      v-bind:false-value="b">
   </div>
 
   <script src="./js/vue.js"></script>

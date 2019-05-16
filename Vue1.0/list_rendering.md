@@ -93,7 +93,7 @@
     - Because **DOM nodes are no longer moved to reflect the change in order**, temporary state like DOM input values and component private state can become out of sync (misplace)
 - Be careful when using `track-by="$index"` if the `v-for` block contains form input elements or child components
 ### Caveats
-- Due to limitations of JavaScript, Vue.js cannot detect the following changes to an Array:
+- [ ] Due to limitations of JavaScript, Vue.js cannot detect the following changes to an Array:
     - When you directly set an item with the index, e.g. `vm.items[0] = {};`
         - Vue.js augments observed Arrays with a `$set()` method
 
