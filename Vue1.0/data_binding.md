@@ -43,7 +43,7 @@
     ```
 
     - Attribute interpolations are **disallowed** in Vue.js directives and special attributes
-    - Attribute interpolations are translated into v-bind bindings internally
+    - Attribute interpolations are translated into `v-bind` bindings internally
 ## Bind expressions
 - In Vue.js, a binding expression consists of a single JavaScript expression optionally followed by one or more filters
 - JS expressions
