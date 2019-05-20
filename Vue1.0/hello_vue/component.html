@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Component</title>
+</head>
+<body>
+    <div id="example">
+      <my-component v-ref:first-child></my-component>
+
+      <parent-component>
+      </parent-component>
+
+      <sugar-component my-msg="hello" :my-message="parentMsg"></sugar-component>
+      <parent-sugar></parent-sugar>
+      <br><br>
+
+      <!-- template for child -->
+      <template id="child-template">
+        <input v-model="msg">
+        <button v-on:click="notify">Dispatch Event</button>
+      </template>
+      <!-- template for parent -->
+      <div>
+        <p>Message: {{ messages | json }}</p>
+        <child v-on:child-msg="handleIt"></child>
+      </div>
+
+      <single-slot>
+        <p>This is some original content</p>
+        <p>This is some more original content</p>
+      </single-slot>
+
+      <named-slot>
+        <p slot="one">One</p>
+        <p slot="two">Two</p>
+        <p>Default A</p>
+      </named-slot>
+
+      <component :is="currentView"></component>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script src="./js/component.js"></script>
+</body>
+</html>
