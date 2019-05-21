@@ -19,7 +19,7 @@ Vue.component('parent-component', Parent)
 Vue.component(
   'sugar-component', {
     props: ['myMsg', 'myMessage'],
-    template: '<div>{{ myMsg }}, registration sugar{{ myMessage }}</di>'
+    template: '<div>{{ myMsg }}, registration sugar{{ myMessage }}</div>'
   }
 )
 
