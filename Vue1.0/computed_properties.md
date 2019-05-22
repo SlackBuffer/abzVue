@@ -26,43 +26,43 @@
     ```
 
 - Computed property vs `$watch`
-- Vue.js does provide an API method called `$watch` that allows you to observe data changes on a Vue instance
-- It is often a better idea to use a computed property rather than an imperative `$watch` callback
+    - Vue.js does provide an API method called `$watch` that allows you to observe data changes on a Vue instance
+    - It is often a better idea to use a computed property rather than an imperative `$watch` callback
 
-    ```html
-    <div id="demo">{{fullName}}</div>
-    ```
+        ```html
+        <div id="demo">{{fullName}}</div>
+        ```
 
-    ```js
-    var vm = new Vue({
-        el: '#demo',
-        data: {
-            firstName: 'Foo',
-            lastName: 'Bar',
-            fullName: 'Foo Bar'
-        }
-    })
-    // imperative and repetitive
-    vm.$watch('firstName', function (val) {
-        this.fullName = val + ' ' + this.lastName
-    })
-    vm.$watch('lastName', function (val) {
-        this.fullName = this.firstName + ' ' + val
-    })
-
-    var vm = new Vue({
-        el: '#demo',
-        data: {
-            firstName: 'Foo',
-            lastName: 'Bar'
-        },
-        computed: {
-            fullName: function () {
-                return this.firstName + ' ' + this.lastName
+        ```js
+        var vm = new Vue({
+            el: '#demo',
+            data: {
+                firstName: 'Foo',
+                lastName: 'Bar',
+                fullName: 'Foo Bar'
             }
-        }
-    })
-    ```
+        })
+        // imperative and repetitive
+        vm.$watch('firstName', function (val) {
+            this.fullName = val + ' ' + this.lastName
+        })
+        vm.$watch('lastName', function (val) {
+            this.fullName = this.firstName + ' ' + val
+        })
+
+        var vm = new Vue({
+            el: '#demo',
+            data: {
+                firstName: 'Foo',
+                lastName: 'Bar'
+            },
+            computed: {
+                fullName: function () {
+                    return this.firstName + ' ' + this.lastName
+                }
+            }
+        })
+        ```
 
 - Computed setter
     - Computed properties are by default getter-only, but you can also provide a setter when you need it

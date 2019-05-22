@@ -2,7 +2,7 @@
 ## Basic usage
 - Use the `v-model` directive to create **two-way data bindings** on form input and textarea elements
     - It automatically picks the correct way to update the element based on the input type
-- `v-model` is essentially **syntax sugar** for updating data on user input events, plus special care for some edge cases
+    - `v-model` is essentially **syntax sugar** for updating data on user input events, plus special care for some edge cases
 - Text
 	
     ```html
@@ -136,7 +136,8 @@
     vm.toggle === vm.b
     ```
 
-    - [ ] Not work if `a` or `b` is an array
+    - 该 `input` 的值 `toggle` 选中时为 `vm.a`，为选中时为 `vm.b`
+    - [x] Not work if `a` or `b` is an array. Working now
 - Radio
 	
     ```html
@@ -165,7 +166,7 @@
 
 ## Param attributes
 - `lazy`
-    - By default, `v-model` syncs the input with the data after each `input` event. You can add a `lazy` attribute to change the behavior to sync after `change` events
+    - By default, `v-model` syncs the input with the data **after each `input` event**. You can add a `lazy` attribute to change the behavior to sync after `change` events
       - `input` 在每次输入后都会触发
       - `change` 在输入值有变化后失焦的情况下触发
       - `blur` 在失焦后触发

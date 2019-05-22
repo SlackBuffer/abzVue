@@ -2,7 +2,7 @@
 ## `v-for`
 - Use the `v-for` directive to render a list of items based on an Array
 - The `v-for` directive requires a special syntax in the form of `item in items`, where `items` is the source data Array and `item` is an alias for the Array element being iterated on
-- Inside `v-for` blocks we have full access to parent scope properties, plus a special variable `$index` which is the Array index for the current item
+- Inside `v-for` blocks we have full access to **parent scope properties**, plus a special variable `$index` which is the Array index for the current item
 
     ```html
     <ul id="example-2">
@@ -65,9 +65,8 @@
     - `sort()`
     - `reverse()`
 ### Replacing an array
-- When working with non-mutating methods (e.g. `filter()`, `concat()` and `slice()`), you can just replace the old Array with the new one
-    - You might think this will cause Vue.js to throw away the existing DOM and re-render the entire list - luckily that is not the case
-    - Vue.js implements some smart heuristics to maximize DOM element reuse, so replacing an array with another array containing overlapping objects is a very efficient operation
+- When working with non-mutating methods (e.g. `filter()`, `concat()` and `slice()`), you can just **replace** the old Array with the new one
+    - You might think this will cause Vue.js to throw away the existing DOM and re-render the entire list - luckily that is not the case. Vue.js implements some smart heuristics to maximize DOM element reuse, so replacing an array with another array containing overlapping objects is a very efficient operation
 ### `track-by`
 - By default `v-for` determines the reusability of existing **scopes** and **DOM elements** by tracking the **identity** of its data object, this could cause the entire list to be re-rendered
 - If each of your data objects has a unique `id` property, then you can use a `track-by` special attribute to give Vue.js a hint so that it can reuse existing instances as much as possible
@@ -91,7 +90,7 @@
 - If you don’t have a unique key to track by, you can also use `track-by="$index"`, which will force `v-for` into in-place update mode: fragments are **no longer moved around**, they simply get **flushed with the new value at the corresponding index**
 - This can make Array replacement extremely efficient, but it comes at a trade-off
     - Because **DOM nodes are no longer moved to reflect the change in order**, temporary state like DOM input values and component private state can become out of sync (misplace)
-- Be careful when using `track-by="$index"` if the `v-for` block contains form input elements or child components
+    - So Be careful when using `track-by="$index"` if the `v-for` block contains form input elements or child components
 ### Caveats
 - [ ] Due to limitations of JavaScript, Vue.js cannot detect the following changes to an Array:
     - When you directly set an item with the index, e.g. `vm.items[0] = {};`
@@ -104,7 +103,7 @@
     
     - When you modify the length of the Array, e.g. `vm.items.length = 0`
         - Just replace `items` with an empty array
--  Vue.js also augments Arrays with a convenience method `$remove()`, which searches for and removes an item from target Array by calling `splice()` internally    
+- > Vue.js also augments Arrays with a convenience method `$remove()`, which searches for and removes an item from target Array by calling `splice()` internally    
 
     ```js
     var index = this.items.indexOf(item)

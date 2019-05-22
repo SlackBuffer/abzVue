@@ -1,9 +1,9 @@
-- Plugins usually add global-level functionality to Vue
+- Plugins usually add **global-level functionality** to Vue
 - There is no strictly defined scope for a plugin - there are typically several types of plugins you can write:
-    - Add some global methods or properties. e.g. vue-element
-    - Add one or more global assets: directives/filters/transitions etc. e.g. vue-touch
+    - Add some global methods or properties. e.g. `vue-element`
+    - Add one or more global assets: directives/filters/transitions etc. e.g. `vue-touch`
     - Add some Vue instance methods by attaching them to `Vue.prototype`
-    - A library that provides an API of its own, while at the same time injecting some combination of the above. e.g. vue-router
+    - A library that provides an API of its own, while at the same time injecting some combination of the above. e.g. `vue-router`
 - A Vue.js plugin should expose an `install` method. The method will be called with the Vue constructor as the first argument, along with possible options
 - Use plugins by calling the `Vue.use()` global method and optionally pass in some options
     - Some plugins such as vue-router automatically calls `Vue.use()` if Vue is available as a global variable

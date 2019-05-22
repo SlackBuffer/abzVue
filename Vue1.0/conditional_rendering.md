@@ -14,8 +14,7 @@
     </template>
     ```
 
-    - `<template>` element serves as an invisible wrapper
-    - The final rendered result will not include the `<template>` element
+    - `<template>` element serves as an **invisible wrapper**. The final rendered result will not include the `<template>` element
 - `v-show`
 
     ```html
@@ -23,7 +22,7 @@
     ```
 
     - An element with `v-show` will always be rendered and remain in the DOM; `v-show` simply **toggles the `display`** CSS property of the element
-    - `v-show` doesn’t support the `<template>` syntax
+    - **`v-show` doesn’t support the `<template>` syntax**
 - `v-else`
 
     ```html
@@ -52,7 +51,7 @@
     <custom-component v-show="condition"></custom-component>
     <p v-else>This could be a component too</p>
 
-    <!-- replace the v-else with another `v-show` -->
+    <!-- replace the `v-else` with another `v-show` -->
     <custom-component v-show="condition"></custom-component>
     <p v-show="!condition">This could be a component too</p>
     ```

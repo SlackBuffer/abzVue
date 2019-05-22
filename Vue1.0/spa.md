@@ -44,8 +44,8 @@
     })
     ```
 
-    - Notice we are putting all actions that mutate the store’s state inside the store itself
-    - This type of centralized state management makes it easier to understand **what type of mutations could happen to the state**, and **how are they triggered**
+    - Notice we are **putting all actions that mutate the store’s state inside the store itself**
+        - This type of centralized state management makes it easier to understand **what type of mutations could happen to the state**, and **how are they triggered**
     - Each component can still own and manage its private state
     ![](https://v1.vuejs.org/images/state.png)
 - [Vuex](https://github.com/vuejs/vuex/)

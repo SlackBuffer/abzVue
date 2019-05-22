@@ -32,7 +32,7 @@ Vue.component('parent-sugar', {
   }
 })
 
-// ???
+// [x] 
 Vue.component('child', {
   template: '#child-template',
   data: function() {

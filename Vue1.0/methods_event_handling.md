@@ -72,7 +72,7 @@
     ```
     
 ## Key modifiers
-- When listening for keyboard events, we often need to check for common key codes
+- When listening for keyboard events, we often need to check for common **key codes**
 - Vue.js also allows adding key modifiers for `v-on` when listening for key events
 
     ```html
@@ -110,7 +110,7 @@
 - You might be concerned that this whole event listening approach violates the good old rules about “separation of concern”
 - Rest assured - since all Vue.js handler functions and expressions are **strictly bound** to the ViewModel that’s handling the current View, it won’t cause any maintenance difficulty
 - In fact, there are several benefits in using `v-on`
-    - It makes it easier to locate the handler function implementations within your JS code by simply skimming the HTML template
+    - It makes it easier to **locate** the handler function implementations within your JS code by simply skimming the HTML template
     - Since you don’t have to manually attach event listeners in JS, your **ViewModel code can be pure logic and DOM-free**. This makes it easier to test.
     - When a ViewModel is destroyed, all event listeners are **automatically** removed. You don’t need to worry about cleaning it up yourself
 

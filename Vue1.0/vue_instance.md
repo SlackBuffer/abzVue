@@ -19,7 +19,7 @@
     ```
 
 - All Vue.js components are essentially extended Vue instances
-- Each Vue instance goes through a series of initialization steps when it is created - for example, it needs to set up data observation, compile the template, and create the necessary data bindings
+- Each Vue instance goes through a series of **initialization** steps when it is created - for example, it needs to set up data observation, compile the template, and create the necessary data bindings
 - Along the way, it will also invoke some lifecycle hooks, which give us the opportunity to execute custom logic
 
     ```js

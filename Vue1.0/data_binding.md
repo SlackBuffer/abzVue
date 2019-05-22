@@ -1,5 +1,5 @@
 - Vue.js uses a DOM-based templating implementation
-- This means that all Vue.js templates are essentially valid, parsable HTML enhanced with some **special attributes**
+    - This means that all Vue.js templates are essentially valid, parsable HTML enhanced with some **special attributes**
 - The text put inside mustache tags are called **binding expressions**
 ## Interpolations
 - Text
@@ -18,11 +18,13 @@
 
     - The contents are inserted as plain HTML - data binding are ignored
 - [ ] Use partials if you need to reuse template pieces
-
-    ```html
+	
+    ```js
     // registering a partial
     Vue.partial('my-partial', '<p>This is a partial! {{msg}}</p>')
+    ```
 
+    ```html
     <!-- a static partial -->
     <partial name="my-partial"></partial>
 
@@ -42,25 +44,25 @@
     <div id="item-{{ id }}"></div>
     ```
 
-    - Attribute interpolations are **disallowed** in Vue.js directives and special attributes
+    - Attribute interpolations are **disallowed in Vue.js directives and special attributes**
     - Attribute interpolations are translated into `v-bind` bindings internally
 ## Bind expressions
 - In Vue.js, a binding expression consists of a single JavaScript expression optionally followed by one or more filters
 - JS expressions
 
-    ```html
+    ```js
     {{ number + 1 }}
     {{ ok ? 'YES' : 'NO' }}
     {{ message.split('').reverse().join('') }}
     ```
 
-    - These expressions will be evaluated in the data scope of the owner Vue instance
-    - Each binding can only contain one single expression
+    - These expressions will be **evaluated in the data scope of the owner Vue instance**
+    - Each binding can only contain 1 single expression
     
-    ```html
-    <!-- this is a statement, not an expression: -->
+    ```js
+    // this is a statement, not an expression:
     {{ var a = 1 }}
-    <!-- flow control won't work either, use ternary expressions -->
+    // flow control won't work either, use ternary expressions
     {{ if (ok) { return message } }}
     ```
     
@@ -73,8 +75,8 @@
         - The filter function always receives the expression’s value as the first argument
         - Quoted arguments are interpreted as plain string, while un-quoted ones will be evaluated as expressions
     
-    ```html
-    <!-- built-in `capitalize` filter -->
+    ```js
+    // built-in `capitalize` filter
     {{ message | capitalize }}
     {{ message | filterA | filterB }}
     {{ message | filterA 'arg1' arg2 }}
