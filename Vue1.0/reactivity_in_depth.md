@@ -6,6 +6,7 @@
 - For every directive/data binding in the template, there will be a corresponding **watcher** object, which records any properties “touched” during its evaluation as dependencies. Later on when a dependency’s setter is called, it triggers the watcher to re-evaluate, and in turn causes its associated directive to perform DOM updates
 ![](https://v1.vuejs.org/images/data.png)
 # Change detection caveats
+- https://codepen.io/slackbuffer/pen/LoBVQN?editors=1010
 - Due to the limitation of ES5, Vue.js [ ] **cannot detect property addition or deletion**
 - Since Vue.js performs the getter/setter conversion process during instance initialization, a property must be present in the data object in order for Vue.js to convert it and make it reactive
 	

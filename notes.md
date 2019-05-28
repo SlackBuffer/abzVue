@@ -1,4 +1,5 @@
 # Digest
+- Vue instances: 根组件，子组件
 - Vue 的模板基于 DOM 实现，所有 Vue 的模板都是合法的 HTML，并拥有一些特殊的属性
 - `v-` 开头是 Vue 提供的特殊属性 attributes，即指令 directives
     - 指令的职责是在与之关联的表达式的值改变后将某些行为应用到 DOM
